@@ -32,14 +32,17 @@ git push -u origin main
 
 ### Step 3: Configure GitHub Pages
 
+**Option A: Automatic Setup (Recommended)**
+The workflow will automatically enable GitHub Pages when it runs. Just push your code and the workflow will handle everything!
+
+**Option B: Manual Setup**
 1. **Go to repository Settings**
    - Navigate to your new repository on GitHub
    - Click "Settings" tab
-
 2. **Configure Pages**
    - In the left sidebar, click "Pages"
    - Under "Source", select **"GitHub Actions"**
-   - That's it! The workflow is already configured
+   - Click "Save"
 
 ### Step 4: Wait for Deployment
 
