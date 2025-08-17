@@ -2,12 +2,34 @@ baseURL = 'https://TonyAshworth.github.io/emily-cookbook-hugo/'
 languageCode = 'en-us'
 title = "Emily's Cookbook"
 
+# Required for PaperMod theme
+theme = "PaperMod"
+
+# Pagination
+[pagination]
+  pagerSize = 10
+
+# Enable emoji support
+enableEmoji = true
+
 [params]
-  # Site description
+  # Site info
   description = "A collection of delicious gluten-free recipes tested and perfected in our home kitchen."
   author = "Emily Ashworth"
   
-  # PaperMod specific settings
+  # Theme settings
+  defaultTheme = "auto" # auto, light, dark
+  disableThemeToggle = false
+  
+  # Home page mode - use home-info mode
+  mode = "home-info"
+  
+  # Home page settings  
+  [params.homeInfoParams]
+    Title = "Welcome to Emily's Cookbook 🍴"
+    Content = "A collection of over 100 delicious gluten-free recipes tested and perfected in our home kitchen. From comfort food classics to international flavors, find your next favorite dish here!"
+  
+  # Features
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
@@ -16,19 +38,26 @@ title = "Emily's Cookbook"
   ShowWordCount = true
   ShowToc = true
   TocOpen = false
+  ShowRssButtonInSectionTermList = true
   
-  # Home page settings
-  homeInfoParams = { Title = "Welcome to Emily's Cookbook 🍴", Content = "A collection of over 100 delicious gluten-free recipes tested and perfected in our home kitchen. From comfort food classics to international flavors, find your next favorite dish here!" }
-  
-  # Search
-  defaultTheme = "auto"
-  disableThemeToggle = false
-  
+  # SEO
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = [ "title", "permalink", "summary", "content" ]
+    
   # Social icons
-  socialIcons = [
-    { name = "github", url = "https://github.com/TonyAshworth/emily-cookbook-hugo" },
-    { name = "rss", url = "/index.xml" }
-  ]
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/TonyAshworth/emily-cookbook-hugo"
+  
+  [[params.socialIcons]]
+  name = "rss"
+  url = "/index.xml"
   
 [menu]
   [[menu.main]]
@@ -51,9 +80,6 @@ title = "Emily's Cookbook"
 [taxonomies]
   tag = "tags"
   category = "categories"
-  
-# Theme configuration
-theme = 'PaperMod'
 
 # Markup settings
 [markup]
