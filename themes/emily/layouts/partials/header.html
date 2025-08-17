@@ -1,0 +1,37 @@
+<header class="site-header">
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="{{ "/" | relURL }}" class="brand-link">
+          <h1 class="site-title">{{ .Site.Title }}</h1>
+        </a>
+      </div>
+      
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search recipes..." autocomplete="off">
+        <div id="search-results" class="search-results"></div>
+      </div>
+      
+      <div class="nav-menu">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relURL }}" class="nav-link">{{ .Name }}</a>
+        {{ end }}
+      </div>
+      
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  
+  {{ if .IsHome }}
+  <div class="hero-section">
+    <div class="hero-content">
+      <h2 class="hero-title">{{ .Site.Params.introTitle | default "Welcome to Emily's Cookbook" }}</h2>
+      <p class="hero-description">{{ .Site.Params.introDescription | default .Site.Params.description }}</p>
+    </div>
+  </div>
+  {{ end }}
+</header>

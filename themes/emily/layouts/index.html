@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="container">
+  <div class="recipes-grid">
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ if not $pages }}
+      {{ $pages = site.RegularPages }}
+    {{ end }}
+    
+    {{ range $pages }}
+      {{ partial "recipe-card.html" . }}
+    {{ end }}
+  </div>
+  
+  {{ if eq (len $pages) 0 }}
+  <div class="empty-state">
+    <h2>No recipes found</h2>
+    <p>It looks like there are no recipes yet. Add some delicious recipes to get started!</p>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

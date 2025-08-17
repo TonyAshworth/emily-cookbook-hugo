@@ -1,0 +1,61 @@
+<article class="recipe-card">
+  <a href="{{ .RelPermalink }}" class="card-link">
+    <div class="card-image">
+      {{ if .Params.thumbnail }}
+        <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}" loading="lazy">
+      {{ else if .Params.featureImage }}
+        <img src="{{ .Params.featureImage | relURL }}" alt="{{ .Title }}" loading="lazy">
+      {{ else }}
+        <div class="placeholder-image">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16l-1-4H3z"/>
+            <path d="M6 8v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/>
+            <path d="M10 12h4"/>
+          </svg>
+          <span>Recipe Image</span>
+        </div>
+      {{ end }}
+      
+      <!-- Recipe metadata overlay -->
+      <div class="card-metadata">
+        {{ if .Params.prepTime }}
+        <span class="prep-time">⏱️ {{ .Params.prepTime }}</span>
+        {{ end }}
+        {{ if .Params.difficulty }}
+        <span class="difficulty">{{ .Params.difficulty }}</span>
+        {{ end }}
+      </div>
+    </div>
+    
+    <div class="card-content">
+      <h3 class="card-title">{{ .Title }}</h3>
+      
+      <div class="card-description">
+        {{ if .Params.summary }}
+          {{ .Params.summary }}
+        {{ else if .Summary }}
+          {{ .Summary }}
+        {{ else }}
+          {{ .Description | truncate 120 }}
+        {{ end }}
+      </div>
+      
+      {{ if .Params.tags }}
+      <div class="card-tags">
+        {{ range first 3 .Params.tags }}
+        <span class="tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+      
+      <div class="card-footer">
+        <span class="read-more">View Recipe →</span>
+        {{ if .Date }}
+        <time class="card-date" datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "Jan 2006" }}
+        </time>
+        {{ end }}
+      </div>
+    </div>
+  </a>
+</article>

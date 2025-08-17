@@ -1,0 +1,31 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>{{ .Site.Title }}</h3>
+        <p>{{ .Site.Params.description }}</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <nav class="footer-nav">
+          {{ range .Site.Menus.main }}
+          <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+          {{ end }}
+        </nav>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <div class="footer-social">
+          <a href="{{ "/index.xml" | relURL }}" title="RSS Feed">RSS</a>
+          <a href="https://github.com/TonyAshworth/emily-cookbook-hugo" title="GitHub">GitHub</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

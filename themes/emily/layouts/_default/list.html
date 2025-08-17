@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="container">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ if .Description }}
+    <p class="page-description">{{ .Description }}</p>
+    {{ end }}
+  </header>
+  
+  <div class="recipes-grid">
+    {{ range .Pages }}
+      {{ partial "recipe-card.html" . }}
+    {{ end }}
+  </div>
+  
+  {{ if eq (len .Pages) 0 }}
+  <div class="empty-state">
+    <h2>No recipes found</h2>
+    <p>There are no recipes in this section yet.</p>
+    <a href="{{ "/" | relURL }}" class="btn btn-primary">Browse All Recipes</a>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

@@ -7,3 +7,9 @@
 [submodule "themes/PaperMod"]
 	path = themes/PaperMod
 	url = https://github.com/adityatelange/hugo-PaperMod.git
+[submodule "themes/blist"]
+	path = themes/blist
+	url = https://github.com/apvarun/blist-hugo-theme.git
+[submodule "themes/clarity"]
+	path = themes/clarity
+	url = https://github.com/chipzoller/hugo-clarity.git

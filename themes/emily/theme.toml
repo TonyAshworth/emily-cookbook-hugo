@@ -1,0 +1,11 @@
+name = "Emily"
+license = "MIT"
+description = "A beautiful cookbook theme with portrait-style recipe cards and working search functionality"
+homepage = "https://github.com/TonyAshworth/emily-cookbook-hugo"
+tags = ["cookbook", "recipes", "food", "cards", "search", "responsive"]
+features = ["search", "cards", "responsive", "modern", "clean"]
+min_version = "0.121.0"
+
+[author]
+  name = "Custom Theme for Emily's Cookbook"
+  homepage = "https://github.com/TonyAshworth/emily-cookbook-hugo"

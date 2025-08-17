@@ -1,0 +1,116 @@
+{{ define "main" }}
+<article class="recipe-single">
+  <div class="container">
+    <header class="recipe-header">
+      <div class="recipe-meta">
+        <h1 class="recipe-title">{{ .Title }}</h1>
+        
+        {{ if .Params.summary }}
+        <p class="recipe-summary">{{ .Params.summary }}</p>
+        {{ end }}
+        
+        <div class="recipe-info">
+          {{ if .Params.prepTime }}
+          <div class="info-item">
+            <span class="info-label">Prep Time</span>
+            <span class="info-value">{{ .Params.prepTime }}</span>
+          </div>
+          {{ end }}
+          
+          {{ if .Params.cookTime }}
+          <div class="info-item">
+            <span class="info-label">Cook Time</span>
+            <span class="info-value">{{ .Params.cookTime }}</span>
+          </div>
+          {{ end }}
+          
+          {{ if .Params.totalTime }}
+          <div class="info-item">
+            <span class="info-label">Total Time</span>
+            <span class="info-value">{{ .Params.totalTime }}</span>
+          </div>
+          {{ end }}
+          
+          {{ if .Params.servings }}
+          <div class="info-item">
+            <span class="info-label">Servings</span>
+            <span class="info-value">{{ .Params.servings }}</span>
+          </div>
+          {{ end }}
+          
+          {{ if .Params.difficulty }}
+          <div class="info-item">
+            <span class="info-label">Difficulty</span>
+            <span class="info-value">{{ .Params.difficulty }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      
+      {{ if .Params.featureImage }}
+      <div class="recipe-image">
+        <img src="{{ .Params.featureImage | relURL }}" alt="{{ .Title }}" loading="lazy">
+      </div>
+      {{ end }}
+    </header>
+    
+    <div class="recipe-content">
+      {{ if .Params.ingredients }}
+      <section class="ingredients-section">
+        <h2>Ingredients</h2>
+        <ul class="ingredients-list">
+          {{ range .Params.ingredients }}
+          <li class="ingredient">
+            <input type="checkbox" id="ingredient-{{ . | urlize }}" class="ingredient-checkbox">
+            <label for="ingredient-{{ . | urlize }}">{{ . }}</label>
+          </li>
+          {{ end }}
+        </ul>
+      </section>
+      {{ end }}
+      
+      <section class="instructions-section">
+        <h2>Instructions</h2>
+        <div class="recipe-instructions">
+          {{ .Content }}
+        </div>
+      </section>
+      
+      {{ if .Params.notes }}
+      <section class="notes-section">
+        <h2>Chef's Notes</h2>
+        <div class="recipe-notes">
+          {{ range .Params.notes }}
+          <p class="note">{{ . }}</p>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+      
+      {{ if .Params.tags }}
+      <section class="tags-section">
+        <h2>Tags</h2>
+        <div class="recipe-tags">
+          {{ range .Params.tags }}
+          <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+    </div>
+    
+    <footer class="recipe-footer">
+      <div class="recipe-actions">
+        <button class="btn btn-primary" onclick="window.print()">🖨️ Print Recipe</button>
+        <button class="btn btn-secondary" onclick="navigator.share ? navigator.share({title: '{{ .Title }}', url: window.location.href}) : null">📤 Share</button>
+      </div>
+      
+      {{ if .Date }}
+      <div class="recipe-date">
+        <small>Published {{ .Date.Format "January 2, 2006" }}</small>
+      </div>
+      {{ end }}
+    </footer>
+  </div>
+</article>
+{{ end }}
