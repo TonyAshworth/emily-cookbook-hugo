@@ -1,0 +1,62 @@
+baseURL = 'https://TonyAshworth.github.io/emily-cookbook-hugo/'
+languageCode = 'en-us'
+title = "Emily's Cookbook"
+
+[params]
+  # Site description
+  description = "A collection of delicious gluten-free recipes tested and perfected in our home kitchen."
+  author = "Emily Ashworth"
+  
+  # PaperMod specific settings
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowToc = true
+  TocOpen = false
+  
+  # Home page settings
+  homeInfoParams = { Title = "Welcome to Emily's Cookbook 🍴", Content = "A collection of over 100 delicious gluten-free recipes tested and perfected in our home kitchen. From comfort food classics to international flavors, find your next favorite dish here!" }
+  
+  # Search
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  
+  # Social icons
+  socialIcons = [
+    { name = "github", url = "https://github.com/TonyAshworth/emily-cookbook-hugo" },
+    { name = "rss", url = "/index.xml" }
+  ]
+  
+[menu]
+  [[menu.main]]
+    name = "All Recipes"
+    url = "/recipes/"
+    weight = 10
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 30
+
+# Output directory (GitHub Actions will use this)
+# publishDir = "public" # This is the default, so we don't need to specify it
+
+# Enable taxonomies for recipe categorization
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  
+# Theme configuration
+theme = 'PaperMod'
+
+# Markup settings
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
