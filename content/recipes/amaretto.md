@@ -1,10 +1,13 @@
-﻿+++
++++
 title = "'Amaretto '"
+description = "A delicious adult beverage"
 date = "2024-01-01"
-draft = false
 tags = ["adult drinks"]
+prep_time = ""
+cook_time = ""
+total_time = ""
+servings = ""
 categories = ["recipes"]
-description = ""
 +++
 
 Amaretto is a great gift to give your special friends over the holidays! Just don't forget to make it early! 
