@@ -2,7 +2,7 @@
 title = "'Amaretto '"
 description = "A delicious adult beverage"
 date = "2024-01-01"
-tags = ["adult drinks"]
+tags = ["adult drinks", "holiday"]
 prep_time = ""
 cook_time = ""
 total_time = ""
