@@ -66,7 +66,7 @@ The GitHub Actions workflow (`.github/workflows/hugo.yml`) automatically:
 2. **Build process**:
    - Installs Hugo Extended v0.128.0
    - Installs Dart Sass for styling
-   - Checks out code with theme submodules
+   - Checks out code (custom Emily theme included)
    - Builds the site with minification
    - Uploads to GitHub Pages
 
@@ -127,10 +127,10 @@ The GitHub Actions workflow (`.github/workflows/hugo.yml`) automatically:
 
 If the theme isn't loading:
 ```bash
-git submodule update --init --recursive
-git add .
-git commit -m "Update theme submodule"
-git push origin main
+# Verify the custom Emily theme is present
+ls themes/emily/
+# Theme should be included in the repository
+# If missing, the repository may be incomplete
 ```
 
 ### Custom Domain Setup

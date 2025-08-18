@@ -1,10 +1,10 @@
 # Emily's Cookbook - Hugo Edition 🍴
 
-A beautiful, fast, and modern recipe website built with Hugo and the PaperMod theme. Features over 100 delicious gluten-free recipes tested and perfected in our home kitchen.
+A beautiful, fast, and modern recipe website built with Hugo and a custom Emily theme. Features over 100 delicious gluten-free recipes tested and perfected in our home kitchen.
 
 ![Hugo](https://img.shields.io/badge/Hugo-FF4088?style=flat&logo=hugo&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-327FC7.svg?style=flat&logo=github&logoColor=white)
-![PaperMod Theme](https://img.shields.io/badge/Theme-PaperMod-blue)
+![Custom Theme](https://img.shields.io/badge/Theme-Emily-pink)
 
 ## 🌟 Features
 
@@ -34,9 +34,10 @@ A beautiful, fast, and modern recipe website built with Hugo and the PaperMod th
    cd emily-cookbook-hugo
    ```
 
-2. **Initialize theme submodule**
+2. **Verify theme is present**
    ```bash
-   git submodule update --init --recursive
+   # The custom Emily theme should be included in the repository
+   ls themes/emily/
    ```
 
 3. **Start local development server**
@@ -71,7 +72,7 @@ emily-cookbook-hugo/
 │       ├── chicken-pot-pie.md
 │       └── ...
 ├── themes/
-│   └── PaperMod/                   # Theme submodule
+│   └── emily/                      # Custom Emily theme
 ├── archetypes/
 │   └── recipes.md                  # Template for new recipes
 ├── hugo.toml                       # Site configuration
@@ -119,12 +120,12 @@ This recipe serves 4 people and takes about 30 minutes total.
 
 ## 🎨 Theme Customization
 
-The site uses the [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme. Key customization options in `hugo.toml`:
+The site uses a custom "Emily" theme designed specifically for this cookbook. Key features in `hugo.toml`:
 
-- **Colors & Appearance**: Automatic dark/light mode switching
-- **Navigation**: Customizable menu items and social icons  
-- **Homepage**: Home-Info mode with welcoming message
-- **Features**: Reading time, breadcrumbs, share buttons, table of contents
+- **Clean Design**: Portrait-style recipe cards with beautiful imagery
+- **Search Functionality**: Fast, client-side search across all recipes
+- **Responsive Layout**: Works perfectly on desktop, tablet, and mobile
+- **Recipe Focus**: Optimized specifically for recipe display and browsing
 
 ## 🚀 Deployment
 
@@ -167,9 +168,12 @@ The site includes:
 
 ### For Recipe Contributors (Emily)
 
-1. Use the upcoming desktop application to create/edit recipes
-2. The app will handle git commits and pushes automatically
-3. Site updates automatically via GitHub Actions
+1. **Desktop Application**: Use Emily's Cookbook Manager desktop app
+   - Recipe-only sync (ignores build files and development artifacts)
+   - GitHub authentication using personal access tokens
+   - Comprehensive recipe editing with TOML frontmatter support
+2. **Automatic Sync**: The app handles git commits and pushes automatically
+3. **Live Updates**: Site updates automatically via GitHub Actions
 
 ### For Developers
 
@@ -180,7 +184,8 @@ The site includes:
 
 2. **Theme Updates**
    ```bash
-   git submodule update --remote themes/PaperMod
+   # Theme is custom and included in the repository
+   # No submodule updates needed
    ```
 
 3. **Content Validation**
@@ -223,7 +228,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Theme not loading?**
 ```bash
-git submodule update --init --recursive
+# Verify the Emily theme is present
+ls themes/emily/
+# Theme should be included in the repository, no submodules needed
 ```
 
 **Build failing?**
@@ -238,15 +245,16 @@ hugo server --bind 0.0.0.0 --port 1313 -D
 ### Getting Help
 
 - 📖 [Hugo Documentation](https://gohugo.io/documentation/)
-- 🎨 [PaperMod Theme Guide](https://github.com/adityatelange/hugo-PaperMod/wiki)
+- 📱 [Desktop App Guide](https://github.com/TonyAshworth/emily-cookbook-hugo/tree/main/cookbook-manager)
 - 🐛 [Report Issues](https://github.com/TonyAshworth/emily-cookbook-hugo/issues)
 
 ## 🏆 Credits
 
 - **Recipes**: Created and tested by Emily Ashworth
 - **Development**: Migrated and enhanced by Tony Ashworth
-- **Theme**: [PaperMod](https://github.com/adityatelange/hugo-PaperMod) by Aditya Telange
+- **Theme**: Custom "Emily" theme designed for recipe websites
 - **Generator**: [Hugo](https://gohugo.io/) - The world's fastest framework for building websites
+- **Desktop App**: Emily's Cookbook Manager for recipe editing and GitHub sync
 
 ---
 
