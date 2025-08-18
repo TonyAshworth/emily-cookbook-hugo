@@ -39,3 +39,26 @@ yarn-error.log*
 # Conversion scripts (temporary)
 convert-recipes*.ps1
 fix-quotes*.ps1
+
+# Cookbook Manager - Development files
+cookbook-manager/node_modules/
+cookbook-manager/build/
+cookbook-manager/dist/
+cookbook-manager/out/
+cookbook-manager/coverage/
+cookbook-manager/package-lock.json
+cookbook-manager/*.log
+
+# Cookbook Manager - Build and development scripts
+cookbook-manager/build.bat
+cookbook-manager/build.ps1
+cookbook-manager/install-and-build.cmd
+
+# Cookbook Manager - Documentation (keep in separate docs if needed)
+cookbook-manager/README.md
+cookbook-manager/SETUP-GUIDE.md
+cookbook-manager/TROUBLESHOOTING.md
+cookbook-manager/ERROR-FIX-SUMMARY.md
+
+# Cookbook Manager - Test files (if we don't want them in repo)
+cookbook-manager/test-*.js
